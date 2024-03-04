@@ -3,29 +3,67 @@ import React from "react";
 import { StyleSheet, View, Image, Text, ScrollView } from "react-native";
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
 
-
-export const mapp = () => {
+export const mapp =  () => {
   return (
     <View style={styles.container}>
       <MapView
         provider={PROVIDER_GOOGLE}
         style={styles.map}
         region={{
-          latitude: 37.78825,
-          longitude: -122.4324,
+          latitude: 24.02799, 
+          longitude: -104.65242,
           latitudeDelta: 0.015,
           longitudeDelta: 0.0121,
         }}
+        showsUserLocation = {true}
+        showsMyLocationButton = {true}
       >
         <Marker 
+        coordinate={{
+          
+          latitude: 24.02799, 
+          longitude: -104.65242,
+        }}
+        
+        image={require('../assets/marker/mark.png')}
+        title="Salud DIgna" 
+        ></Marker>
+        <Marker 
           coordinate={{
-            latitude: 37.78825,
-            longitude: -122.4324,
+            latitude: 24.034448463319098, 
+            longitude: -104.66188153014127,
           }}
           image={require('../assets/marker/mark.png')}
-          title="test"
+          title="Centro neurologico"
+          description="Dr. Antonio de Jesus"
+        >
+
+
+          <Callout tooltip>
+            <View>
+              <View style={styles.bubble}>
+                <Text style={styles.name}>Favorite Place</Text>
+                <Text style={styles.description}>This is a description</Text>
+                <Image style={styles.image} source={require('../assets/banners/banner.jpg')} />
+              </View>
+              <View style={styles.arrowBorder}></View>
+              <View style={styles.arrow}></View>
+            </View>
+          </Callout>
+        </Marker>
+
+
+        <Marker 
+          coordinate={{
+            latitude: 24.042438266751862, 
+            longitude: -104.63741197616963,
+          }}
+          image={require('../assets/marker/mark.png')}
+          title="Psique centro de formación y Psicoterapia"
           description="test description"
         >
+
+
           <Callout tooltip>
             <View>
               <View style={styles.bubble}>
@@ -85,15 +123,14 @@ const styles = StyleSheet.create({
   container: {
     height: 400,
     width: 400,
-    display: 'flex',
-    
+    flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
     padding: 10,
     margin: 10,
   },
   map: {
     flex: 1,
-    ...StyleSheet.absoluteFillObject,
+    flexDirection: 'column',
+    justifyContent: 'center',
   },
 });

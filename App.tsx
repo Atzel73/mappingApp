@@ -20,6 +20,7 @@ import {
   Text,
   useColorScheme,
   View,
+  Button,
 } from 'react-native';
 
 import {
@@ -29,6 +30,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import { getLocation } from './functions/geoLocation';
 
 
 function App(): React.JSX.Element {
@@ -52,13 +54,14 @@ function App(): React.JSX.Element {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Text style={styles.text}>Hola mundo! c:</Text>
+          <Text style={styles.text}></Text>
         </View>
       </ScrollView>
       <View style={styles.mapContainer}>
         {mapp()}
       </View>
     </SafeAreaView>
+    
   );
 }
 
@@ -87,6 +90,7 @@ const styles = StyleSheet.create({
   },
   mapContainer: {
     //flex: 1, // Ocupar todo el espacio disponible
+    flexDirection: 'column',
     justifyContent: 'center',
   },
 });
