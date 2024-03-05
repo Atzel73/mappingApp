@@ -30,7 +30,9 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import { getLocation } from './functions/geoLocation';
+
+
+import { Target } from './Components/card';
 
 
 function App(): React.JSX.Element {
@@ -59,6 +61,11 @@ function App(): React.JSX.Element {
       </ScrollView>
       <View style={styles.mapContainer}>
         {mapp()}
+
+
+          <Target />
+
+
       </View>
     </SafeAreaView>
     
