@@ -33,7 +33,7 @@ import {
 
 
 import { Target } from './Components/card';
-
+import { targetPlaces } from './Components/cardPlaces';
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -61,10 +61,7 @@ function App(): React.JSX.Element {
       </ScrollView>
       <View style={styles.mapContainer}>
         {mapp()}
-
-
-          <Target />
-
+          {targetPlaces()}
 
       </View>
     </SafeAreaView>
