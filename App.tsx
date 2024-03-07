@@ -6,12 +6,12 @@
  */
 
 
-import {mapp} from './screens/mapLocal';
+import { mapp } from './screens/mapLocal';
 
-import {enableLatestRenderer} from 'react-native-maps';
+import { enableLatestRenderer } from 'react-native-maps';
 
 import React from 'react';
-import type {PropsWithChildren} from 'react';
+import type { PropsWithChildren } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -51,7 +51,7 @@ function App(): React.JSX.Element {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        
+
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
@@ -61,16 +61,16 @@ function App(): React.JSX.Element {
       </ScrollView>
       <View style={styles.mapContainer}>
         {mapp()}
-          {targetPlaces()}
+        {targetPlaces()}
 
       </View>
     </SafeAreaView>
-    
+
   );
 }
 
 const styles = StyleSheet.create({
-  text : {
+  text: {
     color: '#fff',
     fontSize: 20,
     fontWeight: 'bold',

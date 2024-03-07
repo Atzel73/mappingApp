@@ -29,12 +29,7 @@ const requestLocationPermission = async () => {
     }
   };
 
-
-
-
-// state to hold location
   const [location, setLocation] = useState(false);
-  // function to check permissions and get Location
  export const getLocation = () => {
     const result = requestLocationPermission();
     result.then(res => {

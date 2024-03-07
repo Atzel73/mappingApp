@@ -1,8 +1,13 @@
 import { React } from 'react';
 
 
-export const places = [{
-    photo: "",
+export const places = [
+    {
+    coordinate: {
+        latitude: 24.03195663600582, 
+        longitude: -104.67376510853963
+    },
+    photo: "../assets/places/IDJ.jpeg",
     instituto: " Instituto Duranguense de la Juventud ",
     domicilio: " Calle Gomez Palacio #934, entre Hidalgo y Zaragoza. ",
     codigoPostal: 34000, 
@@ -13,7 +18,11 @@ export const places = [{
     requisitosAtencion: " Acudir directamente o mediante llamada telefonica. ",
 },
 {
-    photo: "",
+    coordinate: {
+        latitude: -25.436658952319963,
+        longitude: -49.28039871579469,
+    },
+    photo: "../assets/places/CAIF.jpeg",
     instituto: " Centro de Psicoterapia Familiar e Individual ",
     domicilio: " Blv. Jose Maria Patoni, Manzana #105, Predio Rustico La Tinaja y Los Lugos. ",
     codigoPostal: 34217,
@@ -24,7 +33,11 @@ export const places = [{
     requisitosAtencion: " Acudir directamente o mediante llamada telefonica. ",
 },
 {
-    photo: "",
+    coordinate: {
+        latitude: 23.997449720052934, 
+        longitude: -104.67612405898662
+    },
+    photo: "../assets/places/CESSA.jpeg",
     instituto: " CESSA 450 (Centro de Salud con Servicios Ampliados).  ",
     domicilio: " Toma de Zacatecas N. 129, Col. Division Del Norte (Division Del Norte) ",
     codigoPostal: 34000,
@@ -35,7 +48,11 @@ export const places = [{
     requisitosAtencion: " El paciente puede acudir directamente directamente a solicitar la consulta, \ ser referido por alguna institucion externa o bien de la misma secretaria de salud. ",
 },
 {
-    photo: "",
+    coordinate: {
+        latitude: 24.029883058669277, 
+        longitude: -104.60383768966523
+    },
+    photo: "../assets/places/CIJ.jpeg",
     instituto: " CIJ (Centro de Integracion Juvenil) ",
     domicilio: " Carretera Mexico Km 3.5 Mz. A Lote 8 Col. Industrial ",
     codigoPostal: 34000,
@@ -46,7 +63,11 @@ export const places = [{
     requisitosAtencion: " Unicamente se solicita que el paciente ingrese de manera voluntaria. ",
 },
 {
-    photo: "",
+    coordinate: {
+        latitude: 24.046446919923543, 
+        longitude: -104.59385274733452
+    },
+    photo: "../assets/places/miguelVallebueno.jpeg",
     instituto: " Hospital de Salud Mental Dr. Miguel Vallebueno ",
     domicilio: " Av. Fidel VElazquez Sanchez s/n, Agricola Veinte de Noviembre ",
     codigoPostal: 34234,
