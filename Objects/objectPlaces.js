@@ -45,7 +45,7 @@ export const places = [
     horarios: " Lunes a Domingo. 08:00 - 14:30 pm ",
     servicios: [" Tratamiento psicologico para adolescentes y adultos. "],
     costos: " Consulta psicologica: $53 / Gratuita con seguro popular. ",
-    requisitosAtencion: " El paciente puede acudir directamente directamente a solicitar la consulta, \ ser referido por alguna institucion externa o bien de la misma secretaria de salud. ",
+    requisitosAtencion: " El paciente puede acudir directamente a solicitar la consulta, \ ser referido por alguna institucion externa o bien de la misma secretaria de salud. ",
 },
 {
     coordinate: {
