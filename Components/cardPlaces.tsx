@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { Text, Card } from '@rneui/themed';
 import { places } from '../Objects/objectPlaces';
 import { ScreenWidth } from '@rneui/base';
+import { Animated } from 'react-native-maps';
 
 const CARD_WIDTH = ScreenWidth * 0.9;
-const TargetPlaces = () => {
+
+
+export const targetPlaces = () => {
   return (
-    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+    <ScrollView
+      horizontal
+      showsHorizontalScrollIndicator={false}>
       <View style={styles.container}>
         {places.map((place, index) => (
           <TouchableOpacity key={index} style={styles.cardContainer}>
@@ -81,4 +86,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TargetPlaces;

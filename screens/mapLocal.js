@@ -21,12 +21,12 @@ export const mapp =  () => {
         <Marker 
         coordinate={{
           
-          latitude: 24.02799, 
-          longitude: -104.65242,
+          latitude: 24.03195663600582, 
+          longitude: -104.67376510853963,
         }}
         
         image={require('../assets/marker/mark.png')}
-        title="Salud DIgna" 
+        title="Instituto Duranguense de la Juventud" 
         ></Marker>
         <Marker 
           coordinate={{
