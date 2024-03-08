@@ -15,9 +15,9 @@ export const targetPlaces = ({
 }) => {
   const [selectedPlace, setSelectedPlace] = useState(null);
 
-  const handlePlacePress = place => {
+  const handlePlacePress = (place: any) => {
     setSelectedPlace(place);
-    onPlaceSelected(place); // Llama a la función externa con el lugar seleccionado
+    onPlaceSelected(place);
   };
 
   return (
@@ -27,9 +27,37 @@ export const targetPlaces = ({
           <TouchableOpacity
             key={index}
             style={styles.cardContainer}
-            onPress={() => handlePlacePress(place)} // Maneja la presión de la tarjeta
-          >
-            <Card>{/* Contenido de la tarjeta */}</Card>
+            onPress={() => handlePlacePress(place)}>
+            <Card>
+              <Card.Image style={styles.image} source={{uri: place.photo}} />
+              <Card.Title style={styles.infoMax}>{place.instituto}</Card.Title>
+              <Text style={styles.info}>
+                <Text style={styles.infoMax}>Ubicacion: </Text>
+                {place.domicilio}
+              </Text>
+              <Text style={styles.info}>
+                <Text style={styles.infoMax}>Codigo Postal: </Text>
+                {place.codigoPostal.toString()}
+              </Text>
+              <Text style={styles.info}>
+                <Text style={styles.infoMax}>Numero de telefono: </Text>
+                {place.telefono.toString()}
+              </Text>
+              <Text style={styles.info}>
+                <Text style={styles.infoMax}>Horarios: </Text>
+                {place.horarios}
+              </Text>
+              <Text style={styles.info}>
+                <Text style={styles.infoMax}>Costos: </Text>
+                {place.costos}
+              </Text>
+              <Text style={styles.info}>
+                <Text style={styles.infoMax}>
+                  Requisitos para recibir atencion:{' '}
+                </Text>
+                {place.requisitosAtencion}
+              </Text>
+            </Card>
           </TouchableOpacity>
         ))}
       </View>
