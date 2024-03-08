@@ -10,6 +10,10 @@ export const mapp = ({ selectedMarker, markers }) => {
         style={styles.map}
         region={{
           
+          latitude: 24.02799, 
+          longitude: -104.65242,
+          latitudeDelta: 0.015,
+          longitudeDelta: 0.0121,
         }}
         showsUserLocation={true}
         showsMyLocationButton={true}
