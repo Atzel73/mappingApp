@@ -5,7 +5,7 @@ import { places } from '../Objects/objectPlaces';
 import { ScreenWidth } from '@rneui/base';
 
 const CARD_WIDTH = ScreenWidth * 0.9;
-const TargetPlaces = () => {
+export const targetPlaces = () => {
   return (
     <ScrollView horizontal showsHorizontalScrollIndicator={false}>
       <View style={styles.container}>
@@ -80,5 +80,3 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
-
-export default TargetPlaces;
