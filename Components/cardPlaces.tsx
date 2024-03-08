@@ -2,8 +2,10 @@ import React from 'react';
 import { View, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { Text, Card } from '@rneui/themed';
 import { places } from '../Objects/objectPlaces';
+import { ScreenWidth } from '@rneui/base';
 
-
+const CARD_WIDTH = ScreenWidth * 0.9;
+const SPACE_FOR_CARD_INSET = ScreenWidth * 0.1 -10;
 export const  targetPlaces = () => {
     return( 
         <>
@@ -17,8 +19,17 @@ export const  targetPlaces = () => {
         left:0,
         bottom:0,
         right:0,
+<<<<<<< HEAD
       }}
       >
+=======
+
+      }}
+      snapToInterval={CARD_WIDTH + 20}
+      
+      snapToAlignment='center'
+>
+>>>>>>> cardData
         <View style={styles.container}>
             {places.map(place => {
                 return(
@@ -31,8 +42,6 @@ export const  targetPlaces = () => {
                     uri: place.photo,
                   }}
                 />
-                
-
                 <Card.Title style={styles.infoMax}>{place.instituto}</Card.Title>
                 <Text style={styles.info}> <Text style={styles.infoMax}>Ubicacion: </Text>{place.domicilio}</Text>
                 <Text style={styles.info}> <Text style={styles.infoMax}>Codigo Postal: </Text>{place.codigoPostal.toString()}</Text>
