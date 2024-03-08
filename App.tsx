@@ -10,8 +10,9 @@ function App() {
 
   const handlePlaceSelected = (place: any) => {
     setSelectedMarker(place);
-    setMarkers([...markers, {id: markers.length + 1, ...place}]);
+    setMarkers([...markers, { id: markers.length + 1, coordinate: place.coordinate, title: place.instituto }]);
   };
+  
 
   return (
     <View style={styles.mapContainer}>

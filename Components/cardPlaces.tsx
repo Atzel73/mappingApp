@@ -3,10 +3,9 @@ import { View, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { Text, Card } from '@rneui/themed';
 import { places } from '../Objects/objectPlaces';
 import { ScreenWidth } from '@rneui/base';
-import { Animated } from 'react-native-maps';
 
-const CARD_WIDTH = ScreenWidth * 0.9;
-
+const CARD_WIDTH = ScreenWidth * 0.8; 
+const CONTAINER_PADDING_HORIZONTAL = 16; 
 
 export const targetPlaces = ({
   onPlaceSelected,
@@ -21,16 +20,22 @@ export const targetPlaces = ({
   };
 
   return (
-    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+    <ScrollView
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      contentContainerStyle={{
+        paddingHorizontal: CONTAINER_PADDING_HORIZONTAL,
+      }}>
       <View style={styles.container}>
         {places.map((place, index) => (
           <TouchableOpacity
             key={index}
             style={styles.cardContainer}
             onPress={() => handlePlacePress(place)}>
-            <Card>
+            <Card >
               <Card.Image style={styles.image} source={{uri: place.photo}} />
               <Card.Title style={styles.infoMax}>{place.instituto}</Card.Title>
+              <Card.Divider/>
               <Text style={styles.info}>
                 <Text style={styles.infoMax}>Ubicacion: </Text>
                 {place.domicilio}
@@ -53,7 +58,7 @@ export const targetPlaces = ({
               </Text>
               <Text style={styles.info}>
                 <Text style={styles.infoMax}>
-                  Requisitos para recibir atencion:{' '}
+                  Requisitos para recibir atención:{' '}
                 </Text>
                 {place.requisitosAtencion}
               </Text>
@@ -68,25 +73,29 @@ export const targetPlaces = ({
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    padding: 10,
+    paddingVertical: 10,
   },
   cardContainer: {
     marginRight: 10,
   },
   card: {
     width: CARD_WIDTH,
+    height: 'auto', 
   },
   image: {
     width: '100%',
-    height: 150,
+    height: 125,
+    resizeMode: 'contain',
     marginBottom: 8,
     borderTopLeftRadius: 8,
     borderTopRightRadius: 8,
+    padding: 8,
   },
   info: {
     fontSize: 14,
     marginTop: 4,
     textAlign: 'center',
+
   },
   infoMax: {
     fontSize: 16,
@@ -97,4 +106,3 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
-

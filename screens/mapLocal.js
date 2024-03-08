@@ -1,46 +1,43 @@
-import React from 'react';
-import { StyleSheet, View, Image, Text } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View, Image, Text, ScrollView } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
 
 export const mapp = ({ selectedMarker, markers }) => {
+  const initialRegion = {
+    latitude: 24.02799,
+    longitude: -104.65242,
+    latitudeDelta: 0.015,
+    longitudeDelta: 0.0121,
+  };
+
   return (
     <View style={styles.container}>
       <MapView
         provider={PROVIDER_GOOGLE}
         style={styles.map}
-        region={{
-          
-          latitude: 24.02799, 
-          longitude: -104.65242,
-          latitudeDelta: 0.015,
-          longitudeDelta: 0.0121,
-        }}
+        region={initialRegion}
         showsUserLocation={true}
         showsMyLocationButton={true}
       >
-
-        {/* Marcador seleccionado */}
-        {selectedMarker && (
-          <Marker
-            coordinate={{
-              latitude: selectedMarker.latitude,
-              longitude: selectedMarker.longitude,
-            }}
-            title={selectedMarker.instituto}
-          />
-        )}
-
-        {/* Marcadores adicionales */}
         {markers.map((marker) => (
           <Marker
             key={marker.id}
-            coordinate={{
-              latitude: marker.latitude,
-              longitude: marker.longitude,
-            }}
-            title={marker.instituto}
-          />
+            coordinate={marker.coordinate}
+            image={require('../assets/marker/mark.png')}
+            title={marker.title}
+          >
+            {/* Resto del contenido del marcador */}
+          </Marker>
         ))}
+        {selectedMarker && (
+          <Marker
+            coordinate={selectedMarker.coordinate}
+            image={require('../assets/marker/mark.png')}
+            title={selectedMarker.instituto}
+          >
+            {/* Resto del contenido del marcador seleccionado */}
+          </Marker>
+        )}
       </MapView>
     </View>
   );
