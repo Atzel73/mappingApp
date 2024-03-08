@@ -10,6 +10,7 @@ export const  targetPlaces = () => {
     return( 
         <>
         
+<<<<<<< HEAD
       <ScrollView horizontal
       showsHorizontalScrollIndicator={false}
 >
@@ -17,6 +18,32 @@ export const  targetPlaces = () => {
             {places.map(place => {
                 return(
                   <TouchableOpacity >
+=======
+      <ScrollView horizontal 
+      scrollEventThrottle={1}
+      showsHorizontalScrollIndicator={false}
+      style={styles.chipView}
+      contentInset={{
+        top:0,
+        left:0,
+        bottom:0,
+        right:0,
+<<<<<<< HEAD
+      }}
+      >
+=======
+
+      }}
+      snapToInterval={CARD_WIDTH + 20}
+      
+      snapToAlignment='center'
+>
+>>>>>>> cardData
+        <View style={styles.container}>
+            {places.map(place => {
+                return(
+                  <TouchableOpacity style={styles.chipTouch}>
+>>>>>>> b5c592811e20d41cd684ecc43485b0e3031da145
                   <ScrollView >
                     <Card>
                         <Card.Image
@@ -45,7 +72,22 @@ export const  targetPlaces = () => {
 }
 
 const styles = StyleSheet.create({
+<<<<<<< HEAD
 
+=======
+  chipTouch:{
+    flexDirection: 'row',
+    borderRadius:20,
+    padding: 8,
+    paddingHorizontal: 20,
+    marginHorizontal: 10,
+    height: 35,
+  },
+  chipView: {
+    position: 'absolute',
+    paddingHorizontal: 10,  
+    },
+>>>>>>> b5c592811e20d41cd684ecc43485b0e3031da145
     container: {
       flexDirection: 'row',
       padding: 10,
