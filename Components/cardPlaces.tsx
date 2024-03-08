@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { View, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { Text, Card } from '@rneui/themed';
 import { places } from '../Objects/objectPlaces';
@@ -8,44 +8,28 @@ import { Animated } from 'react-native-maps';
 const CARD_WIDTH = ScreenWidth * 0.9;
 
 
-export const targetPlaces = () => {
+export const targetPlaces = ({
+  onPlaceSelected,
+}: {
+  onPlaceSelected: (place: any) => void;
+}) => {
+  const [selectedPlace, setSelectedPlace] = useState(null);
+
+  const handlePlacePress = place => {
+    setSelectedPlace(place);
+    onPlaceSelected(place); // Llama a la función externa con el lugar seleccionado
+  };
+
   return (
-    <ScrollView
-      horizontal
-      showsHorizontalScrollIndicator={false}>
+    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
       <View style={styles.container}>
         {places.map((place, index) => (
-          <TouchableOpacity key={index} style={styles.cardContainer}>
-            <Card>
-              <Card.Image style={styles.image} source={{uri: place.photo}} />
-              <Card.Title style={styles.infoMax}>{place.instituto}</Card.Title>
-              <Text style={styles.info}>
-                <Text style={styles.infoMax}>Ubicacion: </Text>
-                {place.domicilio}
-              </Text>
-              <Text style={styles.info}>
-                <Text style={styles.infoMax}>Codigo Postal: </Text>
-                {place.codigoPostal.toString()}
-              </Text>
-              <Text style={styles.info}>
-                <Text style={styles.infoMax}>Numero de telefono: </Text>
-                {place.telefono.toString()}
-              </Text>
-              <Text style={styles.info}>
-                <Text style={styles.infoMax}>Horarios: </Text>
-                {place.horarios}
-              </Text>
-              <Text style={styles.info}>
-                <Text style={styles.infoMax}>Costos: </Text>
-                {place.costos}
-              </Text>
-              <Text style={styles.info}>
-                <Text style={styles.infoMax}>
-                  Requisitos para recibir atencion:{' '}
-                </Text>
-                {place.requisitosAtencion}
-              </Text>
-            </Card>
+          <TouchableOpacity
+            key={index}
+            style={styles.cardContainer}
+            onPress={() => handlePlacePress(place)} // Maneja la presión de la tarjeta
+          >
+            <Card>{/* Contenido de la tarjeta */}</Card>
           </TouchableOpacity>
         ))}
       </View>
