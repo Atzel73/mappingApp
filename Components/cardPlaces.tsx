@@ -5,7 +5,6 @@ import { places } from '../Objects/objectPlaces';
 import { ScreenWidth } from '@rneui/base';
 
 const CARD_WIDTH = ScreenWidth * 0.9;
-const SPACE_FOR_CARD_INSET = ScreenWidth * 0.1 - 10;
 const TargetPlaces = () => {
   return (
     <ScrollView horizontal showsHorizontalScrollIndicator={false}>
