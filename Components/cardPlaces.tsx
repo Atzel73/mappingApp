@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ScrollView, StyleSheet } from 'react-native';
+import { View, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { Text, Card } from '@rneui/themed';
 import { places } from '../Objects/objectPlaces';
 
@@ -8,10 +8,21 @@ export const  targetPlaces = () => {
     return( 
         <>
         
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+      <ScrollView horizontal 
+      scrollEventThrottle={1}
+      showsHorizontalScrollIndicator={false}
+      style={styles.chipView}
+      contentInset={{
+        top:0,
+        left:0,
+        bottom:0,
+        right:0,
+      }}
+      >
         <View style={styles.container}>
             {places.map(place => {
                 return(
+                  <TouchableOpacity style={styles.chipTouch}>
                   <ScrollView >
                     <Card>
                         <Card.Image
@@ -32,6 +43,7 @@ export const  targetPlaces = () => {
                 <Text style={styles.info}> <Text style={styles.infoMax}>Requisitos para recibir atencion: </Text>{place.requisitosAtencion}</Text>
                     </Card>
                     </ScrollView>
+                    </TouchableOpacity>
                 );
             })}
         </View>
@@ -41,6 +53,18 @@ export const  targetPlaces = () => {
 }
 
 const styles = StyleSheet.create({
+  chipTouch:{
+    flexDirection: 'row',
+    borderRadius:20,
+    padding: 8,
+    paddingHorizontal: 20,
+    marginHorizontal: 10,
+    height: 35,
+  },
+  chipView: {
+    position: 'absolute',
+    paddingHorizontal: 10,  
+    },
     container: {
       flexDirection: 'row',
       padding: 10,
@@ -50,7 +74,7 @@ const styles = StyleSheet.create({
       width: 150, 
     },
     image: {
-      width: '100%',
+      width: '50%',
       height: 150, 
       marginBottom: 8,
     },
