@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { mapp } from './screens/mapLocal';
-import { places} from './Objects/objectPlaces';
 import { targetPlaces } from './Components/cardPlaces';
+import { places } from './Objects/objectPlaces';
 
 function App() {
-  const [selectedMarker, setSelectedMarker] = useState(null);
-  const [markers, setMarkers] = useState([]);
+  const [selectedMarker, setSelectedMarker] = useState<any>(null);
+  const [markers, setMarkers] = useState<any[]>([]);
 
   const handlePlaceSelected = (place: any) => {
     setSelectedMarker(place);
-    // Agrega el marcador al estado de marcadores
-    setMarkers([...markers, { id: markers.length + 1, ...place }]);
+    setMarkers([...markers, {id: markers.length + 1, ...place}]);
   };
 
   return (
     <View style={styles.mapContainer}>
-      {mapp(selectedMarker)} {/* Pasa el lugar seleccionado al mapa */}
-      <targetPlaces onPlaceSelected={handlePlaceSelected} />
+      {mapp({selectedMarker, markers})}
+      {targetPlaces({onPlaceSelected: handlePlaceSelected})}
     </View>
   );
 }
