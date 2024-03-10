@@ -10,7 +10,7 @@ import { places } from './Objects/objectPlaces';
 //Se importa tambien el mapa
 
 
-function MyTabs() {
+export const MyTabs = () => {
   const [selectedMarker, setSelectedMarker] = useState(null);
   const [markers, setMarkers] = useState([]);
 
@@ -30,17 +30,10 @@ function MyTabs() {
     <View style={styles.mapContainer}>
       {mapp({selectedMarker, markers})}
       {targetPlaces({onPlaceSelected: handlePlaceSelected})}
-      
-      
-      
-      
-      
-      <targetPlaces/>
     </View>
-
-    
   );
 }
+
 
 const styles = StyleSheet.create({
   mapContainer: {
@@ -49,5 +42,3 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
-
-export default MyTabs;

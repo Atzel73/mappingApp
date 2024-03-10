@@ -1,39 +1,20 @@
-import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
-import { mapp } from './screens/mapLocal';
-import { targetPlaces } from './Components/cardPlaces';
-import { places } from './Objects/objectPlaces';
-
-
-import { Target } from './Components/cardPsy';
-import  MyTabs  from './screens/navigatorMap';
-
-
-
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
-
-
+import { MyTabs } from './screens/navigatorMap';
+import { Target } from './Components/cardPsy';
 
 const Tab = createBottomTabNavigator();
 
-
 function App() {
-
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Lugares" component={MyTabs} />
-      <Tab.Screen name="Doctores" component={Target} />
-    </Tab.Navigator>
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Lugares" component={MyTabs} />
+        <Tab.Screen name="Doctores" component={Target} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  mapContainer: {
-    flexDirection: 'column',
-    justifyContent: 'center',
-    flex: 1,
-  },
-});
 
 export default App;
