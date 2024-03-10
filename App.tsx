@@ -4,21 +4,27 @@ import { mapp } from './screens/mapLocal';
 import { targetPlaces } from './Components/cardPlaces';
 import { places } from './Objects/objectPlaces';
 
-function App() {
-  const [selectedMarker, setSelectedMarker] = useState<any>(null);
-  const [markers, setMarkers] = useState<any[]>([]);
 
-  const handlePlaceSelected = (place: any) => {
-    setSelectedMarker(place);
-    setMarkers([...markers, { id: markers.length + 1, coordinate: place.coordinate, title: place.instituto }]);
-  };
-  
+import { Target } from './Components/cardPsy';
+import  MyTabs  from './screens/navigatorMap';
+
+
+
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+
+
+
+const Tab = createBottomTabNavigator();
+
+
+function App() {
 
   return (
-    <View style={styles.mapContainer}>
-      {mapp({selectedMarker, markers})}
-      {targetPlaces({onPlaceSelected: handlePlaceSelected})}
-    </View>
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={MyTabs} />
+      <Tab.Screen name="Settings" component={Target} />
+    </Tab.Navigator>
   );
 }
 
