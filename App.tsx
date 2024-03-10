@@ -22,8 +22,8 @@ function App() {
 
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={MyTabs} />
-      <Tab.Screen name="Settings" component={Target} />
+      <Tab.Screen name="Lugares" component={MyTabs} />
+      <Tab.Screen name="Doctores" component={Target} />
     </Tab.Navigator>
   );
 }
