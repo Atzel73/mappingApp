@@ -9,7 +9,7 @@ const CONTAINER_PADDING_HORIZONTAL = 16;
 
 export const targetPlaces = ({ onPlaceSelected }: { onPlaceSelected: (place: any) => void }) => {
   const [selectedPlace, setSelectedPlace] = useState(null);
-
+  const [chedule, getChedule] = useState([]);
   const handlePlacePress = (place: any) => {
     setSelectedPlace(place);
     onPlaceSelected(place);
@@ -24,16 +24,17 @@ export const targetPlaces = ({ onPlaceSelected }: { onPlaceSelected: (place: any
       }}
     >
       <View style={styles.container}>
-      
+
         {places.map((place, index) => (
+          console.log(place.servicios),
           <ScrollView>
-          <TouchableOpacity key={index} style={styles.cardContainer} onPress={() => handlePlacePress(place)}>
-            <View style={[styles.card, { backgroundColor: '#E8DAF4' }]}>
-              <Card>
-                <Card.Image style={styles.image} source={{ uri: place.photo }} />
-                <Card.Title style={styles.infoMax}>{place.instituto}</Card.Title>
-                <Card.Divider />
-               
+            <TouchableOpacity key={index} style={styles.cardContainer} onPress={() => handlePlacePress(place)}>
+              <View style={[styles.card, { backgroundColor: '#E8DAF4' }]}>
+                <Card>
+                  <Card.Image style={styles.image} source={{ uri: place.photo }} />
+                  <Card.Title style={styles.infoMax}>{place.instituto}</Card.Title>
+                  <Card.Divider />
+
                   <Text style={styles.info}>
                     <Text style={styles.infoMax}>Ubicacion: </Text>
                     {place.domicilio}
@@ -50,10 +51,11 @@ export const targetPlaces = ({ onPlaceSelected }: { onPlaceSelected: (place: any
                     <Text style={styles.infoMax}>Horarios: </Text>
                     {place.horarios}
                   </Text>
-            
+                  <Text style={styles.info}>
+                    <Text style={styles.infoMax}>Servicios: </Text>
+                    {place.servicios}
 
-
-
+                  </Text>
                   <Text style={styles.info}>
                     <Text style={styles.infoMax}>Costos: </Text>
                     {place.costos}
@@ -62,10 +64,10 @@ export const targetPlaces = ({ onPlaceSelected }: { onPlaceSelected: (place: any
                     <Text style={styles.infoMax}>Requisitos para recibir atención: </Text>
                     {place.requisitosAtencion}
                   </Text>
-                
-              </Card>
-            </View>
-          </TouchableOpacity>
+
+                </Card>
+              </View>
+            </TouchableOpacity>
           </ScrollView>
 
         ))}
@@ -90,11 +92,11 @@ const styles = StyleSheet.create({
     width: CARD_WIDTH,
     height: 'auto',
     borderRadius: 10,
-    overflow: 'hidden', // Asegura que el borde redondeado se aplique correctamente
+    overflow: 'hidden', 
   },
   cardContent: {
     padding: 10,
-    maxHeight: 200, // Ajusta esta altura máxima según tus necesidades
+    maxHeight: 200, 
   },
   image: {
     alignSelf: 'center',
@@ -108,12 +110,12 @@ const styles = StyleSheet.create({
   info: {
     fontSize: 12,
     marginTop: 4,
-    textAlign: 'center',
+    textAlign: 'justify',
   },
   infoMax: {
     fontSize: 14,
     marginTop: 4,
-    textAlign: 'center',
+    textAlign: 'justify',
     fontFamily: 'arial',
     color: 'purple',
     fontWeight: 'bold',
