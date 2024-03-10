@@ -50,6 +50,10 @@ export const targetPlaces = ({ onPlaceSelected }: { onPlaceSelected: (place: any
                     <Text style={styles.infoMax}>Horarios: </Text>
                     {place.horarios}
                   </Text>
+            
+
+
+
                   <Text style={styles.info}>
                     <Text style={styles.infoMax}>Costos: </Text>
                     {place.costos}
