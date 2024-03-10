@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { mapp } from './mapLocal';
 import { targetPlaces } from '../Components/cardPlaces';
-import { places } from './Objects/objectPlaces';
+import { places } from '../Objects/objectPlaces';
 
 
 //Aqui se importa el contenido de targetPlaces: son las tarjetas de los consultorios
