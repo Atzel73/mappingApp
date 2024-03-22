@@ -13,7 +13,7 @@ function App() {
       
       <Tab.Navigator>
 
-        <Tab.Screen name="Lugares" component={MyTabs} />
+        <Tab.Screen name="Consultorios" component={MyTabs} />
         <Tab.Screen name="Doctores" component={Target} />
         
       </Tab.Navigator>
