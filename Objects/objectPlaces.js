@@ -69,7 +69,7 @@ export const places = [
     },
     photo: "https://lh5.googleusercontent.com/p/AF1QipMf2HS9LjdD238I8HJ0QXqVv_aJWrL07S_f37qK=w426-h240-k-no",
     instituto: " Hospital de Salud Mental Dr. Miguel Vallebueno ",
-    domicilio: " Av. Fidel VElazquez Sanchez s/n, Agricola Veinte de Noviembre ",
+    domicilio: " Av. Fidel Velazquez Sanchez s/n, Agricola Veinte de Noviembre ",
     codigoPostal: 34234,
     telefono: 6184550633,
     horarios: " Lunes a Sabado las 24 horas diarias ",

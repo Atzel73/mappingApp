@@ -16,10 +16,10 @@ export const MyTabs = () => {
 
   const handlePlaceSelected = place => {
     setSelectedMarker(place);
-    setMarkers([
-      ...markers,
+    setMarkers(prevMarkers => [
+      ...prevMarkers,
       {
-        id: markers.length + 1,
+        id: prevMarkers.length + 1,
         coordinate: place.coordinate,
         title: place.instituto,
       },

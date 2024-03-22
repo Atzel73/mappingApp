@@ -19,16 +19,6 @@ export const mapp = ({ selectedMarker, markers }) => {
         showsUserLocation={true}
         showsMyLocationButton={true}
       >
-        {markers.map((marker) => (
-          <Marker
-            key={marker.id}
-            coordinate={marker.coordinate}
-            image={require('../assets/marker/mark.png')}
-            title={marker.title}
-          >
-            {/* Resto del contenido del marcador */}
-          </Marker>
-        ))}
         {selectedMarker && (
           <Marker
             coordinate={selectedMarker.coordinate}
@@ -93,5 +83,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
+    
   },
 });
