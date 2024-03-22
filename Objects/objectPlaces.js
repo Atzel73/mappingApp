@@ -19,12 +19,12 @@ export const places = [
 },
 {
     coordinate: {
-        latitude: -25.436658952319963,
-        longitude: -49.28039871579469,
+        latitude: 24.045899725637785, 
+        longitude: -104.62928417611036,
     },
-    photo: "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=aPlp5wr1mR-Y5HGpJ9VDPA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=3.1910462&pitch=0&thumbfov=100",
+    photo: "https://lh3.googleusercontent.com/gps-proxy/ALd4DhHLN1jVZhUTEDIML5rfYf1uHky4Zdh7F3K077HynApaZihAQNlR2Julj_JyoSmsoDtb4GPAs6_qNcPKP_ijWJLyQF2d-LJDFKiUco4saCzbQ1K6ZFz_THBSGKbD8CRyTxV1igIsogHiGUHIJPVVESKjqdU8hg5GZPR27TKEe8Gi5TXCeT8PsAgRnKujSjBm5MCxOw=w427-h240-k-no",
     instituto: " Centro de Psicoterapia Familiar e Individual ",
-    domicilio: " Blv. Jose Maria Patoni, Manzana #105, Predio Rustico La Tinaja y Los Lugos. ",
+    domicilio: " Blvd. Juan Pablo II 103, Jardines de Durango, 34200 Durango, Dgo. ",
     codigoPostal: 34217,
     telefono: 6181379101,
     horarios: " Lunes, martes, jueves, viernes y sabado. 16:00 pm - 16:45 pm ",
@@ -37,7 +37,7 @@ export const places = [
         latitude: 23.997449720052934, 
         longitude: -104.67612405898662
     },
-    photo: "https://lh3.googleusercontent.com/gps-proxy/ALd4DhEiLP6mcr356wqT0LcSSWRiLk2jKPPLyiedDH37_XJyoD0d_aVuRPXoflm2WXlu77JMbcna_7mRJvJMFoVIqfBoaw3TF0tr1YKNI3abGGAXnVNo6WLmYL_ZB9MIKm1Rzft1S9i8OMCq5ltIev49k8PVCB0RZZmVQe4RhomHVdr_LxIKv3ciFbyjZu5hslEzxIjcdLI=w427-h240-k-no",
+    photo: "https://lh3.googleusercontent.com/gps-proxy/ALd4DhHwetvsEy9lScL4tGgFop-cUo3Usm8csBq9YBNjOjq_jxpDc9IeRELkZPuepHHGRZn0vRDQRnZmPId7-wMpyl2wQYonWM3jy0SNkHW4IE4T38J-6aKg3bG1rMloag_Xjy1nMuo8-ofPkmYoOQAxHE1UXWrI0lh6GsDi4U5fgYjMKefwK81MUEfLdDCbSlvF_5odegE=w427-h240-k-no",
     instituto: " CESSA 450 (Centro de Salud con Servicios Ampliados).  ",
     domicilio: " Toma de Zacatecas N. 129, Col. Division Del Norte (Division Del Norte) ",
     codigoPostal: 34000,
